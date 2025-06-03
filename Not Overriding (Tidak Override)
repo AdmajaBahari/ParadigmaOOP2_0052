@@ -1,0 +1,30 @@
+
+Ada situasi ketika kita tidak ingin suatu metode di-override oleh kelas turunan. Dalam C++11 ke atas, kita bisa menambahkan kata kunci final pada metode tersebut.
+
+Misalnya, jika kita punya metode yang sangat penting dan tidak boleh diubah perilakunya oleh subclass, maka final menjamin bahwa metode itu tetap seperti yang diharapkan.
+
+Kita juga bisa membuat seluruh kelas bersifat final, artinya tidak ada kelas lain yang boleh mewarisinya. Ini membantu menjaga desain yang lebih ketat dan aman.
+
+Mencoba meng-override metode yang diberi final akan menghasilkan kesalahan saat kompilasi. Ini lebih aman dibanding hanya memberi komentar atau dokumentasi.
+
+Dengan final, kita bisa mengunci perilaku penting yang telah diuji, sehingga tidak rusak oleh pewarisan yang ceroboh di masa depan.
+
+Dalam sistem besar yang dikembangkan oleh banyak tim, final sangat berguna untuk mencegah developer lain salah memahami kontrak kelas.
+
+Final juga membantu compiler untuk melakukan optimasi karena metode yang tidak bisa di-override bisa dipanggil langsung tanpa vtable.
+
+Namun, kita harus bijak dalam menggunakannya. Jangan menambahkan final hanya karena kita tidak ingin orang lain memodifikasi kode kita. Desain harus tetap fleksibel jika diperlukan.
+
+Penggunaan final cocok untuk API internal yang tidak boleh diubah, seperti logging, validasi penting, atau bagian sistem keamanan.
+
+C++ tidak menyediakan kata kunci sealed seperti di C#, tapi final sudah cukup kuat untuk kebutuhan yang sama.
+
+Ketika kita memakai final dalam pewarisan yang kompleks, kita harus hati-hati agar tidak menimbulkan kebuntuan dalam desain objek.
+
+Kadang-kadang kita bisa menyarankan developer untuk menggunakan komposisi alih-alih pewarisan jika banyak metode harus dikunci.
+
+Kelas atau metode yang sangat spesifik dan tidak berguna untuk diwarisi memang sebaiknya ditandai sebagai final.
+
+Menghindari override juga bisa dilakukan secara tidak langsung dengan tidak menggunakan virtual sama sekali, meskipun ini kurang eksplisit.
+
+Pada akhirnya, keyword final adalah alat desain untuk menunjukkan niat programmer bahwa sesuatu tidak boleh berubah — dan compiler akan membantumu menjaganya.

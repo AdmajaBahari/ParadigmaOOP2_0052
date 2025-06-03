@@ -1,0 +1,31 @@
+
+Polimorfisme adalah kemampuan suatu objek untuk merespons secara berbeda terhadap pemanggilan metode yang sama, tergantung pada tipe aktual objeknya. Dalam C++, ini dicapai melalui penggunaan fungsi virtual. Kita bisa mendefinisikan fungsi virtual di kelas induk dan mengimplementasikannya kembali di kelas turunan.
+
+Fungsi virtual membuat C++ mampu menjalankan metode dari objek turunan meskipun objek tersebut sedang dirujuk oleh pointer atau referensi ke kelas induk. Hal ini memungkinkan fleksibilitas tinggi dalam merancang sistem yang dapat diperluas.
+
+Salah satu bentuk polimorfisme adalah overriding, di mana kelas turunan mendefinisikan ulang metode dari kelas induk. Penggunaan keyword virtual di kelas induk penting agar C++ tahu metode mana yang bisa di-override.
+
+Ketika kita menyimpan objek-objek turunan dalam array pointer ke kelas induk, dan memanggil metode yang di-override, maka metode turunanlah yang dipanggil, bukan milik induk. Ini yang disebut runtime polymorphism.
+
+Runtime polymorphism memungkinkan kita menulis kode yang lebih generik. Misalnya, fungsi yang menerima pointer ke kelas induk tetap bisa memanggil metode spesifik kelas turunan tanpa harus tahu tipe spesifiknya.
+
+Fungsi virtual juga menghasilkan vtable secara internal, yakni sebuah tabel fungsi yang digunakan untuk menyimpan alamat metode sebenarnya yang harus dipanggil saat runtime.
+
+Jika kita tidak menggunakan virtual, maka pemanggilan metode akan dilakukan secara statis (compile-time binding), sehingga polimorfisme tidak akan terjadi.
+
+C++ juga mendukung pure virtual function, yang menjadikan kelas sebagai abstract class. Ini berguna ketika kita ingin memaksa semua kelas turunan mengimplementasikan metode tertentu.
+
+Dengan menggunakan pointer atau referensi ke abstract class, kita bisa menangani objek dari berbagai jenis turunan dengan cara yang seragam.
+
+Polimorfisme bukan hanya tentang fungsi, tetapi juga bisa terjadi pada operator, yang disebut operator overloading. Namun, bentuk ini lebih dekat ke compile-time polymorphism.
+
+Kita juga bisa mengimplementasikan polymorphism melalui interface (kelas abstrak dengan hanya pure virtual functions), untuk mendesain sistem modular.
+
+Namun penting untuk berhati-hati agar tidak menyalahgunakan polimorfisme. Jangan pakai jika tidak perlu; terlalu banyak level pewarisan bisa mempersulit pemeliharaan kode.
+
+Dynamic casting bisa digunakan untuk memeriksa tipe nyata objek pada runtime, terutama ketika bekerja dengan hirarki kelas yang kompleks.
+
+Unit test juga sangat penting untuk memastikan bahwa semua fungsi yang di-override bekerja seperti yang diharapkan, dan objek-objek turunan merespons dengan benar.
+
+Secara keseluruhan, polimorfisme membuat program lebih fleksibel dan dapat diperluas, tetapi harus digunakan dengan desain yang hati-hati.
+

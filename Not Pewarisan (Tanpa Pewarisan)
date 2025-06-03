@@ -1,0 +1,31 @@
+
+Tidak semua solusi dalam pemrograman berorientasi objek harus menggunakan pewarisan. Bahkan, dalam banyak kasus, pewarisan bisa menimbulkan ketergantungan berlebihan dan desain yang rapuh.
+
+Ketika kita menggunakan pewarisan, kita secara otomatis membuat hubungan yang sangat erat antara kelas turunan dan kelas induk. Ini bisa menjadi masalah jika kelas induk berubah di masa depan.
+
+Alternatif dari pewarisan adalah komposisi. Dalam pendekatan komposisi, kita menyusun objek kompleks dari objek-objek kecil yang memiliki tanggung jawab spesifik.
+
+Misalnya, daripada mewarisi dari kelas Logger, kita bisa menambahkan objek Logger ke dalam kelas sebagai anggota (has-a relationship).
+
+Komposisi menawarkan fleksibilitas yang lebih tinggi karena kita bisa mengganti bagian-bagian internal tanpa harus mengubah hierarki kelas.
+
+Selain itu, komposisi memungkinkan kita untuk menyusun perilaku secara dinamis selama runtime, sementara pewarisan bersifat statis di waktu kompilasi.
+
+C++ mendukung pendekatan ini dengan sangat baik karena kita bisa menyusun objek menggunakan pointer atau smart pointer untuk mengontrol siklus hidup.
+
+Kelas-kelas kecil yang dikomposisikan juga mudah untuk diuji secara unit, karena mereka memiliki tanggung jawab yang sempit dan spesifik.
+
+Tidak menggunakan pewarisan juga mencegah masalah seperti tight coupling, kesalahan pewarisan ganda, atau kesalahan dalam pemanggilan konstruktor kelas induk.
+
+Dalam praktiknya, jika kita hanya membutuhkan satu atau dua metode dari kelas lain, lebih baik menggunakan komposisi dibandingkan mewarisi seluruh kelas.
+
+Pewarisan sebaiknya hanya digunakan ketika ada hubungan yang jelas dan alami antara kelas — seperti adalah-sebuah (is-a relationship), bukan memiliki (has-a).
+
+Dengan tidak menggunakan pewarisan secara berlebihan, kita bisa membuat arsitektur yang lebih fleksibel dan mudah dikembangkan ke depan.
+
+Prinsip-prinsip seperti SOLID, khususnya prinsip composition over inheritance, menganjurkan untuk meminimalkan pewarisan demi modularitas yang lebih baik.
+
+Menghindari pewarisan juga membuat struktur program menjadi lebih datar dan mudah dipahami, terutama oleh tim baru yang masuk ke dalam proyek.
+
+Kesimpulannya, "not pewarisan" bukan berarti menolak OOP, tapi justru menekankan pemikiran desain yang lebih baik dan modular dalam pengembangan perangkat lunak.
+

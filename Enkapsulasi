@@ -1,0 +1,29 @@
+Enkapsulasi adalah prinsip dasar OOP yang bertujuan untuk menyembunyikan detail implementasi dan hanya mengekspos bagian penting dari sebuah objek kepada pengguna. Dalam C++, ini biasanya dilakukan dengan menjadikan atribut bersifat private dan menyediakan getter serta setter.
+
+Dengan menyembunyikan data, kita mencegah bagian luar program memanipulasi internal objek secara langsung. Ini membantu menjaga integritas dan konsistensi data.
+
+Sebagai contoh, jika sebuah atribut hanya boleh diatur dengan nilai tertentu, kita bisa menambahkan validasi di dalam setter agar nilai yang tidak valid tidak masuk.
+
+Getter juga bisa digunakan untuk mengontrol bagaimana data ditampilkan. Bisa jadi nilai di dalam objek tersimpan dalam bentuk internal yang berbeda dari cara ditampilkan.
+
+Selain untuk melindungi data, enkapsulasi juga memudahkan pengubahan implementasi internal tanpa memengaruhi kode yang memakai objek tersebut.
+
+Misalnya, kita bisa mengganti struktur data internal dari array ke linked list, tanpa harus mengubah kode luar selama interface (getter/setter) tetap sama.
+
+C++ juga mendukung const method, yang menjamin bahwa method tersebut tidak akan mengubah state objek. Ini membantu menjaga enkapsulasi yang baik.
+
+Dengan menempatkan atribut dan metode dalam satu unit logis (kelas), kita membentuk modularitas yang kuat. Kelas bisa dikembangkan, diuji, dan digunakan secara mandiri.
+
+Pemisahan antara file header (.h) dan implementasi (.cpp) juga merupakan bagian dari praktik enkapsulasi di C++. File header hanya memaparkan interface publik.
+
+Melalui enkapsulasi, kita bisa mencegah penggunaan atribut secara sembarangan dari luar objek. Ini menciptakan kode yang lebih aman dan lebih mudah untuk diuji.
+
+Selain itu, enkapsulasi juga mendukung prinsip desain "tell, don’t ask" — artinya kita menyuruh objek melakukan sesuatu, bukan menanyakan keadaannya lalu memproses sendiri.
+
+Enkapsulasi juga mendukung refaktorisasi jangka panjang. Kita dapat mengubah bagaimana suatu fitur bekerja di balik layar tanpa merusak kode pengguna.
+
+Dalam proyek besar, enkapsulasi menjadi kunci pengelolaan kompleksitas karena kita bisa memahami dan bekerja pada satu bagian sistem tanpa perlu tahu semua detail internalnya.
+
+Menggunakan prinsip ini juga mempermudah debugging, karena kita tahu bagian mana yang seharusnya tidak bisa diubah sembarangan dari luar.
+
+Singkatnya, enkapsulasi menciptakan batasan yang sehat antara objek dan dunia luar, menjadikan program lebih terstruktur, aman, dan mudah dikembangkan.

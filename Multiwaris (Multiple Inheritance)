@@ -1,0 +1,29 @@
+Multiple inheritance memungkinkan sebuah kelas mewarisi dari lebih dari satu kelas induk. Ini memberikan kekuatan tambahan dalam desain, namun juga menimbulkan tantangan kompleksitas.
+
+Contoh sederhana adalah kelas Anak yang mewarisi dari Ayah dan Ibu. Namun, ketika Ayah dan Ibu memiliki metode dengan nama yang sama, maka Anak mengalami konflik penamaan.
+
+Untuk menyelesaikan konflik tersebut, kita bisa menggunakan operator scope resolution :: untuk memilih metode dari kelas induk yang mana yang ingin dipanggil.
+
+Masalah yang lebih serius muncul ketika dua kelas induk mewarisi dari kelas dasar yang sama. Jika kelas turunan mewarisi keduanya, maka akan ada dua salinan dari kelas dasar itu.
+
+Masalah ini dikenal sebagai diamond problem. Solusinya adalah dengan menggunakan virtual inheritance, sehingga hanya satu salinan dari kelas dasar yang diwariskan.
+
+Virtual inheritance memastikan bahwa hanya ada satu instance dari kelas dasar dalam hirarki turunan, bahkan jika diwarisi dari dua cabang yang berbeda.
+
+C++ mengizinkan konstruktor untuk memanggil konstruktor kelas induk. Namun dalam multiple inheritance, pemanggilan konstruktor harus eksplisit agar tidak ambigu.
+
+Interface (pure abstract class) sering digunakan sebagai alternatif yang lebih aman dan ringan untuk multiple inheritance, karena hanya membawa deklarasi metode.
+
+Menggunakan multiple inheritance dengan class yang mengandung data sangat berisiko, dan bisa menyebabkan masalah alokasi memori dan ambiguitas logika.
+
+Oleh karena itu, disarankan untuk menggunakan multiple inheritance hanya jika sangat diperlukan, seperti ketika menggabungkan beberapa antarmuka.
+
+Perlu juga menghindari pewarisan berlubang (mewarisi dari kelas turunan tanpa mengerti seluruh rantai pewarisan di atasnya), karena bisa menimbulkan bug tersembunyi.
+
+Membuat unit test untuk semua kemungkinan pemanggilan metode sangat penting dalam multiple inheritance agar tidak ada perilaku yang tidak terduga.
+
+Dokumentasi struktur pewarisan sangat membantu di sini. Menjelaskan siapa mewarisi siapa dan mengapa, membuat kode lebih mudah dipelihara oleh tim lain.
+
+Desain yang terlalu dalam atau terlalu banyak cabang juga sebaiknya dihindari. Gunakan komposisi jika memungkinkan untuk mengurangi kerumitan.
+
+Dengan perencanaan yang baik, multiple inheritance dapat memberikan kekuatan desain tambahan yang signifikan, namun harus diiringi pemahaman mendalam

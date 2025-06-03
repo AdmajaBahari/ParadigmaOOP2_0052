@@ -1,0 +1,32 @@
+
+Abstraksi berarti menyederhanakan kompleksitas dengan hanya memperlihatkan bagian penting dan menyembunyikan detail yang tidak perlu. Dalam OOP, kita melakukan ini dengan class dan interface.
+
+Contohnya, ketika kita membuat class Mobil, pengguna hanya perlu tahu metode jalan() atau rem(), tanpa harus tahu bagaimana mesin bekerja di dalam.
+
+Di C++, kita menggunakan pure virtual functions untuk membuat kelas abstrak. Kelas yang memiliki satu atau lebih pure virtual function tidak bisa diinstansiasi langsung.
+
+Abstraksi membantu developer memfokuskan pada "apa" yang harus dilakukan, bukan "bagaimana" melakukannya. Hal ini mendorong pemrograman berbasis kontrak.
+
+Dengan abstraksi, kita bisa menyusun hierarki kelas yang memudahkan kita mendesain sistem yang besar menjadi bagian-bagian kecil yang bisa dipahami.
+
+Abstraksi juga memungkinkan penggunaan interface. Kelas interface mendefinisikan apa yang harus dilakukan oleh kelas konkret yang mengimplementasikannya.
+
+Ini membantu kita dalam dependency inversion, salah satu prinsip SOLID, yaitu ketergantungan pada abstraksi, bukan pada implementasi.
+
+C++ memungkinkan kita menggunakan pointer atau referensi ke kelas abstrak untuk bekerja dengan berbagai jenis objek turunan.
+
+Ini memberi kita fleksibilitas tinggi dalam menangani objek berbeda dengan cara yang seragam, selama mereka mematuhi interface yang sama.
+
+Dengan abstraksi, perubahan pada implementasi tidak akan memengaruhi kode pengguna selama kontraknya tidak berubah.
+
+Misalnya, class Database bisa memiliki method connect(), dan kita bisa membuat subclass MySQLDatabase dan PostgreSQLDatabase dengan implementasi berbeda.
+
+Abstraksi sangat penting dalam pembuatan framework, karena ia memungkinkan pengguna menggunakan framework tanpa tahu detail di dalamnya.
+
+Selain membantu dalam pengujian (mocking), abstraksi juga sangat berguna dalam dokumentasi dan perencanaan arsitektur perangkat lunak.
+
+Dengan membuat struktur abstrak yang kuat, kita bisa membuat sistem yang mudah dikembangkan, diuji, dan dipelihara.
+
+Abstraksi juga mendukung keberlanjutan proyek jangka panjang, karena antarmuka tidak perlu berubah walau implementasi berubah total.
+
+Dalam proyek besar, desain berbasis abstraksi menghindarkan kita dari ketergantungan langsung yang kompleks antar modul.

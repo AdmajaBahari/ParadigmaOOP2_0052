@@ -1,0 +1,19 @@
+Polimorfisme adalah kemampuan objek untuk merespons fungsi atau metode yang sama dengan cara yang berbeda tergantung pada tipe spesifik objeknya. Dalam C++, ini sering dicapai menggunakan fungsi virtual dalam kelas dasar dan metode override dalam kelas turunan. Dengan polimorfisme, kita dapat menulis kode yang fleksibel dan mendukung ekspansi tanpa mengubah struktur dasar.
+
+Multiple inheritance (multiwaris) adalah fitur di C++ yang memungkinkan sebuah kelas mewarisi dari lebih dari satu kelas dasar. Ini sangat kuat namun dapat memunculkan kompleksitas, seperti konflik nama anggota (ambiguity), terutama saat kelas dasar memiliki metode atau atribut yang sama.
+
+Enkapsulasi adalah konsep membungkus data dan fungsi ke dalam satu unit, yaitu kelas. Di C++, enkapsulasi diwujudkan dengan penggunaan pengakses seperti private, protected, dan public. Ini membantu membatasi akses langsung ke data dan memastikan bahwa data hanya dapat dimodifikasi melalui metode yang telah ditentukan.
+
+Abstraksi dalam C++ berarti menyembunyikan detail implementasi dan hanya menampilkan antarmuka penting kepada pengguna. Ini biasanya diwujudkan melalui kelas abstrak atau antarmuka dengan fungsi virtual murni (= 0). Kelas turunan kemudian diwajibkan untuk mengimplementasikan fungsi-fungsi tersebut.
+
+Dalam beberapa kasus, fungsi di kelas turunan tidak melakukan override pada fungsi virtual kelas dasar, sebuah kondisi yang disebut not overriding. Ini bisa disengaja, misalnya saat kelas turunan belum siap menyediakan implementasi, atau bisa menjadi bug jika pengembang lupa menggunakan keyword override.
+
+Not inheritance (tidak pewarisan) merujuk pada pendekatan ketika kelas baru tidak mewarisi dari kelas lain secara langsung. Ini bisa disebabkan oleh alasan desain, seperti menerapkan komposisi daripada pewarisan, atau membatasi dependensi antara modul dalam sistem besar.
+
+Ketika menggunakan multiple inheritance, sering terjadi konflik nama dari kelas dasar, seperti dua kelas dasar memiliki metode show(). Untuk menyelesaikan konflik multiple inheritance (solveMultiwaris), kita bisa menggunakan scope resolution (A::show(), B::show()) atau mendesain ulang hirarki dengan lebih bijak, misalnya melalui virtual inheritance jika diperlukan.
+
+Visual Studio C++ menyediakan dukungan lengkap untuk menulis dan menganalisis hierarki kelas yang kompleks, termasuk multiple inheritance dan virtual functions. Fitur IntelliSense sangat membantu untuk mengecek apakah metode telah di-override atau tidak, serta memberikan peringatan terhadap ambiguitas pewarisan.
+
+Kombinasi antara enkapsulasi, polimorfisme, dan abstraksi sangat penting untuk membangun sistem yang kuat dan terstruktur dengan baik. Enkapsulasi menjaga data tetap aman, abstraksi menyederhanakan penggunaan, dan polimorfisme memungkinkan fleksibilitas dalam implementasi.
+
+Dalam praktik profesional, penting untuk selalu mendesain kelas dengan mempertimbangkan dampak jangka panjang, termasuk meminimalkan multiple inheritance jika tidak perlu, menggunakan override dengan hati-hati, dan menjaga antar kelas tetap loosely coupled. Semua ini memastikan proyek C++ di Visual Studio tetap terorganisir, scalable, dan mudah dikelola

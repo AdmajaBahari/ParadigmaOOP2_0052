@@ -1,0 +1,33 @@
+Masalah utama dalam pewarisan ganda adalah konflik dan duplikasi. Contoh paling klasik adalah diamond problem, di mana dua kelas turunan mewarisi dari kelas dasar yang sama.
+
+Saat kelas terakhir mewarisi keduanya, dia akan mendapatkan dua versi dari kelas dasar, yang bisa menyebabkan konflik data dan metode.
+
+C++ menyediakan solusi dengan menggunakan keyword virtual saat mewarisi kelas dasar dalam kelas menengah. Ini disebut virtual inheritance.
+
+Dengan virtual inheritance, C++ menjamin hanya akan ada satu instance dari kelas dasar dalam struktur turunan, sehingga menghindari konflik data ganda.
+
+Contohnya, jika class A adalah kelas dasar, dan class B serta class C mewarisi dari A secara virtual, maka class D : public B, public C hanya memiliki satu A.
+
+Namun, kita harus mengingat bahwa penggunaan virtual inheritance membutuhkan pemanggilan konstruktor kelas dasar secara eksplisit di konstruktor kelas terakhir.
+
+Solusi lain adalah dengan mendesain ulang struktur pewarisan, dan bertanya apakah multiple inheritance memang diperlukan, atau bisa digantikan dengan komposisi.
+
+Bila memungkinkan, gunakan interface (pure virtual class) alih-alih pewarisan dengan implementasi nyata. Interface tidak membawa data, sehingga tidak ada konflik state.
+
+Kadang kita juga bisa menyelesaikan konflik pewarisan dengan membuat metode dalam kelas dasar sebagai virtual dan meng-override-nya secara eksplisit.
+
+Dalam beberapa kasus, kita juga bisa menggunakan namespace atau template mixin untuk menyuntikkan perilaku tertentu ke dalam kelas tanpa pewarisan penuh.
+
+Untuk menyelesaikan konflik nama metode, kita bisa menggunakan scope resolution operator :: atau alias untuk mendefinisikan metode mana yang ingin digunakan.
+
+Di sisi lain, jika kelas-kelas yang diwarisi memiliki data anggota yang sama, kita bisa menggabungkan data itu dalam satu kelas lalu mewarisinya secara virtual.
+
+Perlu juga diperhatikan bahwa ketika menggunakan virtual inheritance, semua kelas turunan dalam rantai pewarisan harus konsisten — semua harus virtual atau tidak sama sekali.
+
+Kita juga bisa menandai metode tertentu sebagai override agar lebih eksplisit dan memudahkan compiler mendeteksi kesalahan pewarisan.
+
+Pemahaman mendalam tentang urutan konstruktor, destruktor, dan bagaimana C++ mengelola vtable dalam pewarisan ganda sangat penting untuk debugging.
+
+Dalam sistem yang kompleks, dokumentasi pewarisan sangat penting agar semua developer memahami struktur kelas dan bagaimana pewarisan dilakukan.
+
+Meskipun kompleks, C++ memberi kontrol penuh kepada developer untuk mengelola multiple inheritance, asalkan desainnya dilakukan dengan hati-hati dan bertanggung jawab.
